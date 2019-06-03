@@ -18,28 +18,44 @@ class Board extends React.Component {
             <Square
                 value={this.props.squares[i]}
                 onClick={() => this.props.onClick(i)}
+                key={i}
+                active= 'bbb'
             />
         );
     }
 
     render() {
+        const a = Array(3).fill(null)
+        const b = Array(3).fill(null)
+        const c = Array(3).fill(null)
+
+        const arr = []
+        arr.push(a)
+        arr.push(b)
+        arr.push(c)
+
+        this.props.squares.forEach((item,index) => {
+            let x = index % 3,
+                y = Math.floor(index / 3)
+
+            arr[y][x] = index
+        })
+
         return (
             <div>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
+                {
+                    arr.map((item,index) => {
+                        return (
+                            <div className="board-row" key={index}>
+                                {
+                                    item.map((obj) => {
+                                        return this.renderSquare(obj)
+                                    })
+                                }
+                            </div>
+                        )
+                    })
+                }
             </div>
         );
     }
@@ -54,10 +70,15 @@ class Game extends React.Component {
             }],
             stepNumber: 0,
             xIsNext: true,
+            x: 0,
+            y: 0
         };
     }
 
     handleClick(i) {
+        const x = i % 3
+        const y = Math.floor(i / 3)
+
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
@@ -70,7 +91,9 @@ class Game extends React.Component {
                 squares: squares,
             }]),
             stepNumber: history.length,
-            xIsNext: !this.state.xIsNext
+            xIsNext: !this.state.xIsNext,
+            x,
+            y
         });
     }
 
@@ -87,13 +110,18 @@ class Game extends React.Component {
         const winner = calculateWinner(current.squares);
 
         const moves = history.map((step, move) => {
-            console.log(step,move)
+            // console.log(step,move)
+            let active = ''
+            if (this.state.stepNumber === move) {
+                active = 'bbb'
+            }
+
             const desc = move ?
                 'Go to move #' + move :
                 'Go to game start';
             return (
                 <li key={move}>
-                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                    <button onClick={() => this.jumpTo(move)} className={active}>{desc}</button>
                 </li>
             );
         });
@@ -114,6 +142,7 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{ status }</div>
+                    <div>刚才点击的坐标 x：{this.state.x}, y: {this.state.y}</div>
                     <ol>{ moves }</ol>
                 </div>
             </div>
