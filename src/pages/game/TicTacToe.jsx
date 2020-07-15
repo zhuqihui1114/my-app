@@ -1,5 +1,5 @@
 import React from 'react';
-import '../index.css';
+import '../../index.css';
 
 function Square(props) {
     return (
@@ -61,7 +61,7 @@ class Board extends React.Component {
     }
 }
 
-class Game extends React.Component {
+class TicTacToe extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -170,4 +170,4 @@ function calculateWinner(squares) {
     return null;
 }
 
-export default Game;
+export default TicTacToe;
