@@ -1,5 +1,5 @@
 import React from 'react'
-import Reservation from '../core/Reservation'
+import Reservation from './Reservation'
 
 class LifeCycle extends React.Component {
   constructor(props) {

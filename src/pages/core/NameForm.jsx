@@ -10,6 +10,9 @@ class NameForm extends Component{
   }
 
   handleChange(event) {
+    // 不要直接修改state ， 此代码不会重新渲染组件
+    // this.state = {value: event.target.value};
+
     this.setState({value: event.target.value});
   }
 
@@ -19,6 +22,7 @@ class NameForm extends Component{
   }
 
   render() {
+    console.log('render -------- ')
     return (
       <form onSubmit={this.handleSubmit}>
         <label>

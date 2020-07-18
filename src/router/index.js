@@ -1,11 +1,7 @@
 import React from "react";
 import BoilingVerdict from '../pages/game/BoilingVerdict'
-import FilterableProductTable from '../pages/game/FilterableProductTable'
 import TicTacToe from '../pages/game/TicTacToe'
-import HelloWorld from '../pages/core/HelloWorld'
 import NameForm from '../pages/core/NameForm'
-import Reservation from '../pages/core/Reservation'
-import ListOfTenThings from '../pages/core/ListOfTenThings'
 import Clock from '../pages/core/Clock'
 import LifeCycle from '../pages/lifecycle/Index'
 import Home from '../pages/Home'
@@ -14,6 +10,7 @@ import EX2 from '../pages/example/EX2'
 import EX3 from '../pages/example/EX3'
 import EX4 from '../pages/example/EX4'
 import EX5 from '../pages/example/EX5'
+import EX6 from '../pages/example/EX6'
 
 import {
   BrowserRouter as Router,
@@ -42,27 +39,18 @@ export default function RouterMap() {
           <Route path="/EX5">
             <EX5 />
           </Route>
+          <Route path="/EX6">
+            <EX6 />
+          </Route>
 
           <Route path="/BoilingVerdict">
             <BoilingVerdict />
           </Route>
-          <Route path="/FilterableProductTable">
-            <FilterableProductTable />
-          </Route>
           <Route path="/TicTacToe">
             <TicTacToe />
           </Route>
-          <Route path="/HelloWorld">
-            <HelloWorld />
-          </Route>
           <Route path="/NameForm">
             <NameForm />
-          </Route>
-          <Route path="/Reservation">
-            <Reservation />
-          </Route>
-          <Route path="/ListOfTenThings">
-            <ListOfTenThings />
           </Route>
           <Route path="/Clock">
             <Clock />

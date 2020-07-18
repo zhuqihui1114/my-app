@@ -10,6 +10,8 @@ class Reservation extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
 
+    // 无法为对象的只读属性“num”赋值
+    // props.num  = 12
     console.log('constructor---------')
   }
 

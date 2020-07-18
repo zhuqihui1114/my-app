@@ -1,6 +1,9 @@
 import React from 'react'
 
-// 调用子元素回调 numTimes 次，来重复生成组件
+/**
+ * 函数作为子元素:
+ *  调用子元素回调 numTimes 次，来重复生成组件
+ */
 function Repeat(props) {
   let items = [];
   for (let i = 0; i < props.numTimes; i++) {
