@@ -5,10 +5,12 @@ class Reservation extends React.Component {
     super(props);
     this.state = {
       isGoing: true,
-      numberOfGuests: 2
+      numberOfGuests: props.num
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+
+    console.log('constructor---------')
   }
 
   handleInputChange(event) {
@@ -21,7 +23,46 @@ class Reservation extends React.Component {
     });
   }
 
+  static getDerivedStateFromProps(props, state){
+    console.log('getDerivedStateFromProps!',props, state)
+    // if (nextProps.num !== prevState.numberOfGuests) {
+    //   return {
+    //     numberOfGuests: nextProps.num,
+    //   };
+    // }
+    return null;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState){
+    console.log('getSnapshotBeforeUpdate!',prevProps, prevState)
+    return null
+  }
+
+  // componentWillMount() {
+  //   console.log('Component WILL MOUNT!')
+  // }
+  componentDidMount() {
+    console.log('Component DID MOUNT!')
+  }
+  // componentWillReceiveProps(newProps) {
+  //   console.log('Component WILL RECEIVE PROPS!', newProps)
+  // }
+  shouldComponentUpdate(newProps, newState) {
+    console.log('shouldComponentUpdate',newProps, newState)
+    return true;
+  }
+  // componentWillUpdate(nextProps, nextState) {
+  //   console.log('Component WILL UPDATE!',nextProps, nextState);
+  // }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Component DID UPDATE!')
+  }
+  componentWillUnmount() {
+    console.log('Component WILL UNMOUNT!')
+  }
+
   render() {
+    console.log('render---------')
     return (
       <form>
         <label>
@@ -43,6 +84,8 @@ class Reservation extends React.Component {
             onChange={this.handleInputChange} />
         </label>
         <label>numberOfGuests: {this.state.numberOfGuests}</label>
+        <br/>
+        <label>子组件中 props num: {this.props.num}</label>
       </form>
     );
   }

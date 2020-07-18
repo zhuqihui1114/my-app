@@ -23,6 +23,9 @@ function Home() {
           <li>
           <Link to="/Clock">Clock （生命周期方法）</Link>
           </li>
+          <li>
+          <Link to="/LifeCycle">LifeCycle （生命周期方法）</Link>
+          </li>
         </ul>
         <ul>
           <li>
@@ -34,6 +37,13 @@ function Home() {
           <li>
           <Link to="/BoilingVerdict">BoilingVerdict</Link>
           </li>
+        </ul>
+        <ul>
+          <li><Link to="/EX1">例子1</Link></li>
+          <li><Link to="/EX2">例子2</Link></li>
+          <li><Link to="/EX3">例子3</Link></li>
+          <li><Link to="/EX4">例子4</Link></li>
+          <li><Link to="/EX5">例子5</Link></li>
         </ul>
       </nav>
     </div>
