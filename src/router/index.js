@@ -3,7 +3,9 @@ import BoilingVerdict from '../pages/game/BoilingVerdict'
 import TicTacToe from '../pages/game/TicTacToe'
 import NameForm from '../pages/core/NameForm'
 import Clock from '../pages/core/Clock'
-import LifeCycle from '../pages/lifecycle/Index'
+import LifeCycle from '../pages/example/lifecycle/Index'
+import CounterButton from '../pages/example/lifecycle/CounterButton'
+import ScrollingList from '../pages/example/lifecycle/ScrollingList'
 import Home from '../pages/Home'
 import EX1 from '../pages/example/EX1'
 import EX2 from '../pages/example/EX2'
@@ -61,6 +63,12 @@ export default function RouterMap() {
           </Route>
           <Route path="/LifeCycle">
             <LifeCycle />
+          </Route>
+          <Route path="/CounterButton">
+            <CounterButton />
+          </Route>
+          <Route path="/ScrollingList">
+            <ScrollingList />
           </Route>
           <Route path="/">
             <Home />

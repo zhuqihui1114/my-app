@@ -27,12 +27,14 @@ class Reservation extends React.Component {
 
   static getDerivedStateFromProps(props, state){
     console.log('getDerivedStateFromProps!',props, state)
-    // if (nextProps.num !== prevState.numberOfGuests) {
+    // if (props.num !== state.numberOfGuests) {
     //   return {
-    //     numberOfGuests: nextProps.num,
+    //     numberOfGuests: props.num,
     //   };
+    // } else {
+    //   return null;
     // }
-    return null;
+    return null
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState){
