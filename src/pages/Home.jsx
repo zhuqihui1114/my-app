@@ -31,6 +31,7 @@ function Home() {
           <li><Link to="/EX5">例子5（JavaScript 表达式作为子元素）</Link></li>
           <li><Link to="/EX6">例子6（函数作为子元素）</Link></li>
           <li><Link to="/NameForm">例子 （state）</Link></li>
+          <li><Link to="/ProfilePage">例子 （函数组件与类组件）</Link></li>
           
         </ul>
       </nav>

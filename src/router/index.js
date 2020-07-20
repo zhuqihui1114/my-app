@@ -11,6 +11,7 @@ import EX3 from '../pages/example/EX3'
 import EX4 from '../pages/example/EX4'
 import EX5 from '../pages/example/EX5'
 import EX6 from '../pages/example/EX6'
+import ProfilePage from '../pages/example/FunClass/ProfilePage'
 
 import {
   BrowserRouter as Router,
@@ -41,6 +42,9 @@ export default function RouterMap() {
           </Route>
           <Route path="/EX6">
             <EX6 />
+          </Route>
+          <Route path="/ProfilePage">
+            <ProfilePage />
           </Route>
 
           <Route path="/BoilingVerdict">
